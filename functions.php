@@ -95,6 +95,16 @@ function jackrabbit_widgets_init() {
         'before_title'  => '<h4 class="footer-widget-title">',
         'after_title'   => '</h4>',
     ) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Post Sidebar', 'jackrabbit' ),
+        'id'            => 'sidebar-post',
+        'description'   => esc_html__( 'Widgets for the single post sidebar. Leave empty for smart defaults.', 'jackrabbit' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
 }
 add_action( 'widgets_init', 'jackrabbit_widgets_init' );
 
@@ -191,7 +201,7 @@ function jackrabbit_dynamic_css() {
 
     $accent      = isset( $options['accent_color'] ) ? sanitize_hex_color( $options['accent_color'] ) : '#2563eb';
     $font_size   = isset( $options['base_font_size'] ) ? intval( $options['base_font_size'] ) : 18;
-    $max_width   = isset( $options['layout_width'] ) ? intval( $options['layout_width'] ) : 740;
+    $max_width   = isset( $options['layout_width'] ) ? intval( $options['layout_width'] ) : 820;
     $font_family = isset( $options['font_family'] ) ? $options['font_family'] : 'inter';
     $scale       = isset( $options['heading_scale'] ) ? (string) $options['heading_scale'] : '1.25';
 
