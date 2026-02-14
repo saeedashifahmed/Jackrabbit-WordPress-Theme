@@ -346,6 +346,12 @@
 
         toc.removeAttribute('hidden');
 
+        // Signal CSS to enable the two-column TOC layout.
+        var contentWrap = toc.closest('.single-post__content-wrap');
+        if (contentWrap) {
+            contentWrap.classList.add('has-toc');
+        }
+
         if (!('IntersectionObserver' in window)) {
             return;
         }

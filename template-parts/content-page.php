@@ -8,7 +8,7 @@
 defined('ABSPATH') || exit;
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('page-content'); ?> data-jk-reveal>
+<article id="post-<?php the_ID(); ?>" <?php post_class('page-content'); ?>>
 
     <header class="page-content__header">
         <?php jackrabbit_the_breadcrumbs(); ?>

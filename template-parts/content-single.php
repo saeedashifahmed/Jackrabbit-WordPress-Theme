@@ -13,7 +13,7 @@ $share_title = rawurlencode(get_the_title());
 $share_url = rawurlencode(get_permalink());
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?> data-jk-reveal>
+<article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>
 
     <header class="single-post__header">
         <?php jackrabbit_the_breadcrumbs(); ?>

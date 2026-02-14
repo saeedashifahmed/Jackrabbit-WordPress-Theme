@@ -1066,6 +1066,7 @@ html[data-theme="dark"] .theme-toggle__moon { display: block; }
 /* ─── Content Wrap (TOC + Body) ─── */
 .single-post__content-wrap {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
 }
 
@@ -1119,11 +1120,23 @@ html[data-theme="dark"] .theme-toggle__moon { display: block; }
 /* ─── Entry Content (Post Body) ─── */
 .entry-content,
 .single-post__content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     font-size: 1rem;
     line-height: var(--jk-line-height);
     color: var(--jk-text);
     word-wrap: break-word;
     overflow-wrap: break-word;
+    min-height: 2em;
+    width: 100%;
+}
+
+/* Ensure article-level reveal never hides primary content */
+.single-post,
+.page-content {
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 .entry-content > *:first-child { margin-top: 0; }
@@ -1779,8 +1792,10 @@ input[type="submit"]:active,
 }
 
 @media (min-width: 1120px) {
-    .single-post__content-wrap {
+    .single-post__content-wrap.has-toc {
         grid-template-columns: 220px minmax(0, 1fr);
+    }
+    .single-post__content-wrap {
         align-items: start;
     }
     .single-post__toc {
